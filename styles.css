@@ -1,0 +1,17 @@
+body {
+    font-family:  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+}
+
+.container div {
+    width: 100vw;
+}
+
+.container-row {
+    display: flex;
+}
