@@ -25,6 +25,16 @@ p {
     border-style: solid;
 }
 
+.command-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 16px;
+    width: 256px;
+    margin-right: 64px;
+    align-items: center;
+}
+
 .slide-container {
     display: flex;
     flex-direction: column;
@@ -91,14 +101,24 @@ p {
     margin: 8px;
 }
 
-.command-container{
+
+
+.color-picker {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    column-gap: 16px;
-    width: 256px;
-    margin-right: 64px;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 8px;
+}
+
+.color-picker .color-box {
+    width: 20px;
+    height: 20px;
+    max-height: 20px;
+    max-width: 20px;
+    border-style: solid;
+    border-width: 2px;
 }
 
 .command-container hr {

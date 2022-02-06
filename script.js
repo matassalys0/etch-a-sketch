@@ -1,16 +1,21 @@
 "use strict"
 
 const etchContainer = document.querySelector('.etch-container');
-//Setting the height for 90% of the screen  
+
+let boxColor = '#000000' 
 let gridSize = 16;
 let divHeight = etchContainer.clientHeight / gridSize;
 let colWidth =  etchContainer.clientWidth / gridSize;
 
-//this for loop is used to create the rows
 function paintDiv(e) {
-    e.target.style.backgroundColor = 'black';
+    e.target.style.backgroundColor = boxColor;
 }
 
+function changeBoxColor(e) {
+    boxColor = this.style.backgroundColor;
+}
+
+//this for loop is used to create the rows
 function createEtch(e = undefined) {
     
     if(e != undefined && (e.srcElement.classList.contains('slider') || e.srcElement.classList.contains('size-change-btn'))) {
@@ -83,6 +88,11 @@ function sliderChange(e) {
 const sizeChangeBtns = document.querySelectorAll('.size-change-btn');
 sizeChangeBtns.forEach(btn => {
     btn.addEventListener('click', createEtch);
+})
+
+const colorChangeBtns = document.querySelectorAll('.color-box');
+colorChangeBtns.forEach(btn => {
+    btn.addEventListener('click', changeBoxColor);
 })
 
 createEtch();
