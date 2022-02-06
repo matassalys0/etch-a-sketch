@@ -1,18 +1,34 @@
 "use strict"
 
+const colors = ['black', 'red', 'blue', 'yellow', 'pink',
+'white', 'green', 'violet', 'brown', 'wheat'];
+
 const etchContainer = document.querySelector('.etch-container');
 
 let boxColor = '#000000' 
+let boxColorRandom = false;
 let gridSize = 16;
 let divHeight = etchContainer.clientHeight / gridSize;
 let colWidth =  etchContainer.clientWidth / gridSize;
 
 function paintDiv(e) {
+    if(!boxColorRandom)
     e.target.style.backgroundColor = boxColor;
+    else
+    {
+        boxColor = colors[Math.floor(Math.random()*colors.length)];
+        e.target.style.backgroundColor = boxColor;
+    }
+    
 }
 
-function changeBoxColor(e) {
+function changeBoxColor(e) { 
     boxColor = this.style.backgroundColor;
+    boxColorRandom = false;
+}
+
+function changeBoxColorRandom(e) {
+    boxColorRandom = true;
 }
 
 //this for loop is used to create the rows
@@ -69,8 +85,6 @@ function invokeDivs() {
     });
 }
 
-
-
 const clearBtn = document.querySelector('.clear-btn');
 clearBtn.addEventListener('click', createEtch);
 
@@ -94,5 +108,8 @@ const colorChangeBtns = document.querySelectorAll('.color-box');
 colorChangeBtns.forEach(btn => {
     btn.addEventListener('click', changeBoxColor);
 })
+
+const randomChangeBtn = document.querySelector('.random-color-box');
+randomChangeBtn.addEventListener('click', changeBoxColorRandom);
 
 createEtch();
