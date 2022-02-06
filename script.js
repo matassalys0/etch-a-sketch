@@ -23,9 +23,15 @@ function paintDiv(e) {
 }
 
 function changeBoxColor(e) { 
-    boxColor = this.style.backgroundColor;
-    boxColorRandom = false;
+    if(e.srcElement.classList.contains('color-picker')) 
+        boxColor = e.srcElement.value;
+    else {
+        boxColor = this.style.backgroundColor;
+        boxColorRandom = false;
+    }
 }
+
+    
 
 function changeBoxColorRandom(e) {
     boxColorRandom = true;
@@ -111,5 +117,8 @@ colorChangeBtns.forEach(btn => {
 
 const randomChangeBtn = document.querySelector('.random-color-box');
 randomChangeBtn.addEventListener('click', changeBoxColorRandom);
+
+const colorPicker = document.querySelector('.color-picker');
+colorPicker.addEventListener('input', changeBoxColor);
 
 createEtch();
