@@ -2,8 +2,9 @@
 
 const etchContainer = document.querySelector('.etch-container');
 //Setting the height for 90% of the screen  
-const divHeight = etchContainer.offsetHeight / 16;
-const colWidth =  etchContainer.offsetWidth / 16;
+let gridSize = 16;
+const divHeight = etchContainer.offsetHeight / gridSize;
+const colWidth =  etchContainer.offsetWidth / gridSize;
 
 //this for loop is used to create the rows
 function paintDiv(e) {
@@ -12,7 +13,7 @@ function paintDiv(e) {
 
 function createEtch() {
     etchContainer.innerHTML = "";
-    for(let i = 0; i <= 15; i++) {
+    for(let i = 0; i <= gridSize - 1; i++) {
 
         let rowDiv = document.createElement('div');
         rowDiv.style.height =  divHeight + "px";
@@ -21,7 +22,7 @@ function createEtch() {
         etchContainer.appendChild(rowDiv);
     
         //for loop is used to add 'squares' to the rows
-        for(let j = 0; j <= 15; j++) {
+        for(let j = 0; j <= gridSize - 1; j++) {
             let colDiv = document.createElement('div');
             colDiv.classList.add('container-col');
             colDiv.style.width = colWidth + 'px';
@@ -31,6 +32,21 @@ function createEtch() {
     }
 
     invokeDivs();
+    addRoundedCorners();
+   
+}
+
+//This function adds rounded corners to the corner divs of the etch-a-sketch to fit with the border.
+function addRoundedCorners() {
+    const topLeftDiv = document.querySelector(`#row-${0}col-${0}`);
+    const topRightDiv = document.querySelector(`#row-${0}col-${gridSize - 1}`);
+    const bottomLeftDiv = document.querySelector(`#row-${gridSize - 1}col-${0}`);
+    const bottomRightDiv = document.querySelector(`#row-${gridSize - 1}col-${gridSize - 1}`);
+
+    topRightDiv.style.borderTopRightRadius = '20px';
+    topLeftDiv.style.borderTopLeftRadius = '20px';
+    bottomLeftDiv.style.borderBottomLeftRadius = '20px';
+    bottomRightDiv.style.borderBottomRightRadius = '20px';
 }
 
 function invokeDivs() {
