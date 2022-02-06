@@ -2,10 +2,31 @@ body {
     font-family:  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.container {
+.main-container {
+    display: flex;
+    height: 480px;
+    width: 1280px;
+}
+
+.etch-container {
     display: flex;
     flex-wrap: wrap;
-    height: 90vh;
+    width: 960px;
+}
+
+.command-container{
+    display: flex;
+    flex-direction: column;
+    width: 256px;
+    margin-right: 64px;
+    align-items: center;
+}
+
+.clear-btn {
+    
+    max-width: 128px;
+    width: 100%;
+
 }
 
 .container div {
