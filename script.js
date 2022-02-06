@@ -3,9 +3,9 @@
 const etchContainer = document.querySelector('.etch-container');
 //Setting the height for 90% of the screen  
 let gridSize = 16;
-const divHeight = etchContainer.offsetHeight / gridSize;
-const colWidth =  etchContainer.offsetWidth / gridSize;
-
+const divHeight = etchContainer.clientHeight / gridSize;
+const colWidth =  etchContainer.clientWidth / gridSize;
+console.log(etchContainer.clientHeight);
 //this for loop is used to create the rows
 function paintDiv(e) {
     e.target.style.backgroundColor = 'black';
