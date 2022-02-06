@@ -19,7 +19,6 @@ function paintDiv(e) {
         boxColor = colors[Math.floor(Math.random()*colors.length)];
         e.target.style.backgroundColor = boxColor;
     }
-    
 }
 
 function changeBoxColor(e) { 
@@ -30,8 +29,6 @@ function changeBoxColor(e) {
         boxColorRandom = false;
     }
 }
-
-    
 
 function changeBoxColorRandom(e) {
     boxColorRandom = true;
@@ -66,21 +63,7 @@ function createEtch(e = undefined) {
     }
 
     invokeDivs();
-    //addRoundedCorners();
-   
-}
 
-//This function adds rounded corners to the corner divs of the etch-a-sketch to fit with the border.
-function addRoundedCorners() {
-    const topLeftDiv = document.querySelector(`#row-${0}col-${0}`);
-    const topRightDiv = document.querySelector(`#row-${0}col-${gridSize - 1}`);
-    const bottomLeftDiv = document.querySelector(`#row-${gridSize - 1}col-${0}`);
-    const bottomRightDiv = document.querySelector(`#row-${gridSize - 1}col-${gridSize - 1}`);
-
-    topRightDiv.style.borderTopRightRadius = '20px';
-    topLeftDiv.style.borderTopLeftRadius = '20px';
-    bottomLeftDiv.style.borderBottomLeftRadius = '20px';
-    bottomRightDiv.style.borderBottomRightRadius = '20px';
 }
 
 function invokeDivs() {
