@@ -3,6 +3,14 @@ body {
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(99,126,221,1) 50%, rgba(0,0,0,1) 100%);
 }
 
+p {
+    font-family:  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;   
+    margin: 0;
+}
+
 .main-container {
     display: flex;
     height: 480px;
@@ -21,6 +29,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(99,126,221,1) 50%, rg
 .command-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     column-gap: 16px;
     width: 256px;
     margin-right: 64px;
@@ -28,7 +37,23 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(99,126,221,1) 50%, rg
 }
 
 .slide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 128px;
+    margin-bottom: 8px;
+}
+
+.slider {
+    margin-bottom: 16px;
+}
+
+.slide-value {
+    justify-self: center;
+}
+
+.slider:hover {
+    opacity: 1; 
 }
 
 .command-container button {
