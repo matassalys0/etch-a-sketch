@@ -12,7 +12,8 @@ function paintDiv(e) {
 }
 
 function createEtch(e = undefined) {
-    if(e != undefined && e.srcElement.classList.contains('slider')) {
+    
+    if(e != undefined && (e.srcElement.classList.contains('slider') || e.srcElement.classList.contains('size-change-btn'))) {
         gridSize = e.srcElement.value;
         divHeight = etchContainer.clientHeight / gridSize;
         colWidth =  etchContainer.clientWidth / gridSize;
@@ -38,7 +39,7 @@ function createEtch(e = undefined) {
     }
 
     invokeDivs();
-    addRoundedCorners();
+    //addRoundedCorners();
    
 }
 
@@ -63,7 +64,7 @@ function invokeDivs() {
     });
 }
 
-createEtch();
+
 
 const clearBtn = document.querySelector('.clear-btn');
 clearBtn.addEventListener('click', createEtch);
@@ -78,3 +79,10 @@ function sliderChange(e) {
     sliderValue.textContent = `${e.srcElement.value}x${e.srcElement.value}`;
     createEtch(e);
 }
+
+const sizeChangeBtns = document.querySelectorAll('.size-change-btn');
+sizeChangeBtns.forEach(btn => {
+    btn.addEventListener('click', createEtch);
+})
+
+createEtch();

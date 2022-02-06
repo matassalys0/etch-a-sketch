@@ -23,24 +23,13 @@ p {
     height: 480px;
     width: 960px;
     border-style: solid;
-    border-radius: 25px;
-}
-
-.command-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    column-gap: 16px;
-    width: 256px;
-    margin-right: 64px;
-    align-items: center;
 }
 
 .slide-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 128px;
+    max-width: 200px;
     margin-bottom: 8px;
 }
 
@@ -54,10 +43,6 @@ p {
 
 .slider:hover {
     opacity: 1; 
-}
-
-.command-container button {
-    margin-bottom: 16px;
 }
 
 .clear-btn {
@@ -74,6 +59,52 @@ p {
     cursor: pointer;
     letter-spacing: 2px;
     outline: none;
+    margin-bottom: 16px;
+}
+
+.size-btn-container {
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 16px;
+}
+
+.size-change-btn {
+    font-family:  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: white;
+    max-width: 72px;
+    height: 24px;
+    width: 100%;
+    background-color:dodgerblue;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    outline: none;
+    margin: 8px;
+}
+
+.command-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 16px;
+    width: 256px;
+    margin-right: 64px;
+    align-items: center;
+}
+
+.command-container hr {
+    width: 200px;
+    height: 2px;
+    background-color: white;
 }
 
 .container div {

@@ -13,8 +13,19 @@
         <div class="command-container">
             <button class="clear-btn">Clear</button>
             <div class="slide-container">
-                <input type="range" min="1" max="100" value="50" class="slider" id="gridSlider">
+                <p style="margin-bottom: 16px;">Change size</p>
+                <div class="size-btn-container">
+                    <button class="size-change-btn" value=16>16x16</button>
+                    <button class="size-change-btn" value=32>32x32</button>
+                    <button class="size-change-btn" value=48>48x48</button>
+                    <button class="size-change-btn" value=64>64x64</button>
+                    <button class="size-change-btn" value=80>80x80</button>
+                    <button class="size-change-btn" value=100>100x100</button>
+                </div>
+                <p style="margin-bottom: 8px;">Custom size</p>
+                <input type="range" min="1" max="100" value="16" class="slider" id="gridSlider">
                 <p class="slider-value"></p>
+                <hr>
             </div>
         </div>
         <div class="etch-container"></div>
