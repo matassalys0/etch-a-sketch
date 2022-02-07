@@ -23,7 +23,10 @@ function paintDiv(e) {
 
 function changeBoxColor(e) { 
     if(e.srcElement.classList.contains('color-picker')) 
+    {
         boxColor = e.srcElement.value;
+        boxColorRandom = false;
+    }
     else {
         boxColor = this.style.backgroundColor;
         boxColorRandom = false;
