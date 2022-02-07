@@ -37,9 +37,8 @@ function changeBoxColorRandom(e) {
     boxColorRandom = true;
 }
 
-//this for loop is used to create the rows
 function createEtch(e = undefined) {
-    
+    //if this function has been called by a slider or a size button, we change the grid size
     if(e != undefined && (e.srcElement.classList.contains('slider') || e.srcElement.classList.contains('size-change-btn'))) {
         gridSize = e.srcElement.value;
         divHeight = etchContainer.clientHeight / gridSize;
@@ -47,6 +46,7 @@ function createEtch(e = undefined) {
     }
     
     etchContainer.innerHTML = "";
+    //this for loop is used to create the rows
     for(let i = 0; i <= gridSize - 1; i++) {
 
         let rowDiv = document.createElement('div');
@@ -66,15 +66,20 @@ function createEtch(e = undefined) {
     }
 
     invokeDivs();
-
 }
 
+//function that adds event listener to all the divs
 function invokeDivs() {
     const canvasDivs = document.querySelectorAll('.container-col');
 
     canvasDivs.forEach(div => {
         div.addEventListener('mouseenter', paintDiv);
     });
+}
+
+function sliderChange(e) {
+    sliderValue.textContent = `${e.srcElement.value}x${e.srcElement.value}`;
+    createEtch(e);
 }
 
 const clearBtn = document.querySelector('.clear-btn');
@@ -85,11 +90,6 @@ sliderValue.textContent = `${gridSize}x${gridSize}`;
 
 const slider = document.querySelector('.slider');
 slider.addEventListener('input', sliderChange);
-
-function sliderChange(e) {
-    sliderValue.textContent = `${e.srcElement.value}x${e.srcElement.value}`;
-    createEtch(e);
-}
 
 const sizeChangeBtns = document.querySelectorAll('.size-change-btn');
 sizeChangeBtns.forEach(btn => {

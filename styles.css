@@ -3,6 +3,8 @@ body {
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(99,126,221,1) 50%, rgba(0,0,0,1) 100%);
     display: flex;
     flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 
 .title-div {
@@ -30,7 +32,6 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 480px;
     width: 1280px;
 }
@@ -39,8 +40,9 @@ p {
     display: flex;
     flex-wrap: wrap;
     height: 480px;
-    width: 960px;
+    width: 480px;
     border-style: solid;
+    background-color: white;
 }
 
 .command-container{
